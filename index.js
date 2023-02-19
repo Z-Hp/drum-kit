@@ -11,11 +11,10 @@ for (var i = 0; i < numberOfDrums; i++) {
   });
 }
 
-document.addEventListener("keypress", function(event){
+$(document).keypress((event) => {
   makeSound(event.key);
   buttonAnimation(event.key);
 });
-
 
 
 
