@@ -1,10 +1,10 @@
 const audio = new Audio("");
 audio.play();
 
-var numberOfDrums = document.querySelectorAll(".drum").length;
+var numberOfDrums = $(".drum").length;
 
 for (var i = 0; i < numberOfDrums; i++) {
-  document.querySelectorAll(".drum")[i].addEventListener("click", function () {
+  $(".drum")[i].addEventListener("click", function () {
     var buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
     buttonAnimation(buttonInnerHTML);
@@ -65,15 +65,12 @@ function makeSound(key) {
 
 function buttonAnimation(currentKey) {
 
+  var activeButton = $("." + currentKey);
   
-
-  var activeButton = document.querySelector("." + currentKey);
-  
-  activeButton.classList.add("pressed");
-  console.log(activeButton)
+  activeButton.addClass("pressed");
 
   setTimeout(() => {
-    activeButton.classList.remove("pressed");
+    activeButton.removeClass("pressed");
   }, 500);
 
 }
